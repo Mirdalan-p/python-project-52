@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-02 20:53+0300\n"
+"POT-Creation-Date: 2023-05-03 21:48+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,21 +16,70 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
-"(n%100>=11 && n%100<=14)? 2 : 3);\n"
-#: task_manager/views.py:6 templates/base.html:14
-msgid "Task manager"
-msgstr "Менеджер задач"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: templates/base.html:21
+#: task_manager/users/models.py:11 templates/users/users_list.html:13
+msgid "Username"
+msgstr "Имя пользователя"
+
+#: task_manager/users/models.py:15
+msgid "First name"
+msgstr "Имя"
+
+#: task_manager/users/models.py:19
+msgid "Last name"
+msgstr "Фамилия"
+
+#: task_manager/users/models.py:23
+msgid "Password"
+msgstr "Пароль"
+
+#: task_manager/users/views.py:12 templates/base.html:21
 msgid "Users"
 msgstr "Пользователи"
 
+#: task_manager/users/views.py:18 templates/base.html:35
+#: templates/users/user_create.html:13
+msgid "Registration"
+msgstr "Регистрация"
+
+#: task_manager/views.py:10 templates/base.html:14
+msgid "Task manager"
+msgstr "Менеджер задач"
+
 #: templates/base.html:28
+#, fuzzy
+#| msgid "Log in"
+msgid "Log out"
+msgstr "Вход"
+
+#: templates/base.html:32
 msgid "Log in"
 msgstr "Вход"
 
-#: templates/base.html:31
-msgid "Registration"
-msgstr "Регистрация"
+#: templates/users/users_list.html:14
+msgid "Fullname"
+msgstr "Полное имя"
+
+#: templates/users/users_list.html:15
+msgid "Created at"
+msgstr "Дата создания"
+
+#: templates/users/users_list.html:16
+msgid "Action"
+msgstr "Действия"
+
+#: templates/users/users_list.html:31
+msgid "Edit"
+msgstr "Редактировать"
+
+#: templates/users/users_list.html:32
+msgid "Delete"
+msgstr "Удалить"
+
+#, fuzzy
+#~| msgid "Created at"
+#~ msgid "Create user"
+#~ msgstr "Дата создания"
