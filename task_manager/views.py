@@ -12,7 +12,8 @@ class IndexView(TemplateView):
 def sign_in(request):
     if request.method == 'GET':
         form = LoginForm()
-        return render(request, 'login.html', {'form': form})
+        title = _('Log in')
+        return render(request, 'login.html', {'form': form, 'title': title})
     elif request.method == 'POST':
         form = LoginForm(request.POST)
         
