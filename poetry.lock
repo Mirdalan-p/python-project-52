@@ -21,6 +21,18 @@ python-versions = ">=3.6"
 tzdata = ["tzdata"]
 
 [[package]]
+name = "dj-database-url"
+version = "2.0.0"
+description = "Use Database URLs in your Django Application."
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+Django = ">=3.2"
+typing-extensions = ">=3.10.0.0"
+
+[[package]]
 name = "django"
 version = "4.2"
 description = "A high-level Python web framework that encourages rapid development and clean, pragmatic design."
@@ -101,6 +113,14 @@ doc = ["sphinx"]
 test = ["pytest", "pytest-cov"]
 
 [[package]]
+name = "typing-extensions"
+version = "4.5.0"
+description = "Backported and Experimental Type Hints for Python 3.7+"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[[package]]
 name = "tzdata"
 version = "2023.3"
 description = "Provider of IANA time zone data"
@@ -111,7 +131,7 @@ python-versions = ">=2"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "20745b2ea00e54d4d12d52a35170c14520e38ae3e80a0271bdd79887acc866d4"
+content-hash = "fc8396f770b04a905f96b148bbdc71efd1f674a3cb8868f964a0c27032c5e1ff"
 
 [metadata.files]
 asgiref = [
@@ -136,6 +156,10 @@ backports-zoneinfo = [
     {file = "backports.zoneinfo-0.2.1-cp38-cp38-win_amd64.whl", hash = "sha256:4a0f800587060bf8880f954dbef70de6c11bbe59c673c3d818921f042f9954a6"},
     {file = "backports.zoneinfo-0.2.1.tar.gz", hash = "sha256:fadbfe37f74051d024037f223b8e001611eac868b5c5b06144ef4d8b799862f2"},
 ]
+dj-database-url = [
+    {file = "dj-database-url-2.0.0.tar.gz", hash = "sha256:a35a9f0f43775ca6f90d819dc456233ef7bcc76b47377d5d908b75c7eb320624"},
+    {file = "dj_database_url-2.0.0-py3-none-any.whl", hash = "sha256:9c9e5f7224f62635a787e9cc3c6762c9be2b19541a21e3c08fa573bd01609b4b"},
+]
 django = [
     {file = "Django-4.2-py3-none-any.whl", hash = "sha256:ad33ed68db9398f5dfb33282704925bce044bef4261cd4fb59e4e7f9ae505a78"},
     {file = "Django-4.2.tar.gz", hash = "sha256:c36e2ab12824e2ac36afa8b2515a70c53c7742f0d6eaefa7311ec379558db997"},
@@ -158,6 +182,10 @@ setuptools = [
 sqlparse = [
     {file = "sqlparse-0.4.4-py3-none-any.whl", hash = "sha256:5430a4fe2ac7d0f93e66f1efc6e1338a41884b7ddf2a350cedd20ccc4d9d28f3"},
     {file = "sqlparse-0.4.4.tar.gz", hash = "sha256:d446183e84b8349fa3061f0fe7f06ca94ba65b426946ffebe6e3e8295332420c"},
+]
+typing-extensions = [
+    {file = "typing_extensions-4.5.0-py3-none-any.whl", hash = "sha256:fb33085c39dd998ac16d1431ebc293a8b3eedd00fd4a32de0ff79002c19511b4"},
+    {file = "typing_extensions-4.5.0.tar.gz", hash = "sha256:5cb5f4a79139d699607b3ef622a1dedafa84e115ab0024e0d9c044a9479ca7cb"},
 ]
 tzdata = [
     {file = "tzdata-2023.3-py2.py3-none-any.whl", hash = "sha256:7e65763eef3120314099b6939b5546db7adce1e7d6f2e179e3df563c70511eda"},
