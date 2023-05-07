@@ -13,6 +13,7 @@ django = "^4.2"
 django-bootstrap = "^0.2.4"
 python-dotenv = "^1.0.0"
 dj-database-url = "^2.0.0"
+psycopg2-binary = "^2.9.6"
 
 
 [build-system]
