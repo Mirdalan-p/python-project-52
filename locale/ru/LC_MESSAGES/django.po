@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-03 21:48+0300\n"
+"POT-Creation-Date: 2023-05-07 12:30+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -45,6 +45,26 @@ msgstr "Пользователи"
 msgid "Registration"
 msgstr "Регистрация"
 
+#: task_manager/users/views.py:25
+msgid "User successfully changed"
+msgstr "Пользователь успешно изменён"
+
+#: task_manager/users/views.py:28
+#, fuzzy
+#| msgid "Created at"
+msgid "Update user"
+msgstr "Дата создания"
+
+#: task_manager/users/views.py:33
+msgid "User successfully deleted"
+msgstr "Пользователь успешно удалён"
+
+#: task_manager/users/views.py:35
+#, fuzzy
+#| msgid "Created at"
+msgid "Delete user"
+msgstr "Дата создания"
+
 #: task_manager/views.py:10 templates/base.html:14
 msgid "Task manager"
 msgstr "Менеджер задач"
@@ -58,6 +78,22 @@ msgstr "Вход"
 #: templates/base.html:32
 msgid "Log in"
 msgstr "Вход"
+
+#: templates/login.html:8
+msgid "Login"
+msgstr "Войти"
+
+#: templates/users/user_delete.html:9
+msgid "Are you sure you want to delete "
+msgstr "Вы уверены что хотите удалить "
+
+#: templates/users/user_delete.html:10 templates/users/users_list.html:32
+msgid "Delete"
+msgstr "Удалить"
+
+#: templates/users/user_update.html:13
+msgid "Update"
+msgstr "Изменить"
 
 #: templates/users/users_list.html:14
 msgid "Fullname"
@@ -74,12 +110,3 @@ msgstr "Действия"
 #: templates/users/users_list.html:31
 msgid "Edit"
 msgstr "Редактировать"
-
-#: templates/users/users_list.html:32
-msgid "Delete"
-msgstr "Удалить"
-
-#, fuzzy
-#~| msgid "Created at"
-#~ msgid "Create user"
-#~ msgstr "Дата создания"
