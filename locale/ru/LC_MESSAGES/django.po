@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-07 12:30+0300\n"
+"POT-Creation-Date: 2023-05-07 13:51+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -50,36 +50,30 @@ msgid "User successfully changed"
 msgstr "Пользователь успешно изменён"
 
 #: task_manager/users/views.py:28
-#, fuzzy
-#| msgid "Created at"
 msgid "Update user"
-msgstr "Дата создания"
+msgstr "Изменить пользователя"
 
 #: task_manager/users/views.py:33
 msgid "User successfully deleted"
 msgstr "Пользователь успешно удалён"
 
 #: task_manager/users/views.py:35
-#, fuzzy
-#| msgid "Created at"
 msgid "Delete user"
-msgstr "Дата создания"
+msgstr "Удалить пользователя"
 
 #: task_manager/views.py:10 templates/base.html:14
 msgid "Task manager"
 msgstr "Менеджер задач"
 
 #: templates/base.html:28
-#, fuzzy
-#| msgid "Log in"
 msgid "Log out"
-msgstr "Вход"
+msgstr "Выйти"
 
 #: templates/base.html:32
 msgid "Log in"
 msgstr "Вход"
 
-#: templates/login.html:8
+#: templates/login.html:10
 msgid "Login"
 msgstr "Войти"
 
