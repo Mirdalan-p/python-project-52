@@ -17,6 +17,7 @@ class UserCreateView(CreateView):
     template_name = 'users/user_create.html'
     extra_context = {'title': _('Registration')}
     success_url = reverse_lazy('log_in')
+    success_message = _('User successfully registered')
 
 class UserUpdateView(UpdateView):
     model = User

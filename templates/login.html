@@ -3,11 +3,13 @@
 {% load i18n %}
 
 {% block content %}
-<form method="POST" novalidate>
-	{% csrf_token %}
-	<h2>{{ title }}</h2>
-	{{form.as_p}}
-	<input type="submit" value="{% trans 'Login' %}" />
-</form>
+<div class="container wrapper flex-grow-1">
+	<form method="POST" novalidate>
+		{% csrf_token %}
+		<h2>{{ title }}</h2>
+		{{form.as_p}}
+		<input type="submit" value="{% trans 'Login' %}" />
+	</form>
+</div>
 
 {% endblock content%}

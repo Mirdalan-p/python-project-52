@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-07 14:08+0300\n"
+"POT-Creation-Date: 2023-05-07 14:40+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -53,19 +53,23 @@ msgstr "Пользователи"
 msgid "Registration"
 msgstr "Регистрация"
 
-#: task_manager/users/views.py:25
+#: task_manager/users/views.py:20
+msgid "User successfully registered"
+msgstr "Пользователь успешно зарегистрирован"
+
+#: task_manager/users/views.py:26
 msgid "User successfully changed"
 msgstr "Пользователь успешно изменён"
 
-#: task_manager/users/views.py:28
+#: task_manager/users/views.py:29
 msgid "Update user"
 msgstr "Изменить пользователя"
 
-#: task_manager/users/views.py:33
+#: task_manager/users/views.py:34
 msgid "User successfully deleted"
 msgstr "Пользователь успешно удалён"
 
-#: task_manager/users/views.py:35
+#: task_manager/users/views.py:36
 msgid "Delete user"
 msgstr "Удалить пользователя"
 
@@ -76,6 +80,20 @@ msgstr "Менеджер задач"
 #: task_manager/views.py:15 templates/base.html:32
 msgid "Log in"
 msgstr "Вход"
+
+#: task_manager/views.py:26
+msgid "You are logged in"
+msgstr "Вы залогинены"
+
+#: task_manager/views.py:30
+msgid "Please, user correct username and password."
+msgstr ""
+"Пожалуйста, введите правильные имя пользователя и пароль. Оба поля могут "
+"быть чувствительны к регистру."
+
+#: task_manager/views.py:35
+msgid "U are logged out"
+msgstr "Вы разлогинены"
 
 #: templates/base.html:28
 msgid "Log out"
