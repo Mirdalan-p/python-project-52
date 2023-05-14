@@ -6,7 +6,7 @@
 <div class="container wrapper flex-grow-1">
     <h1>{{ title }}</h1>
     <form action="" method="post">{% csrf_token %}
-      <p> {% trans "Are you sure you want to delete " %}{{ user.username }}?</p>
+      <p> {% trans "Delete status" %}?</p>
       <input type="submit" value="{% trans 'Yes, delete' %}" />
     </form>
 {% endblock content %}

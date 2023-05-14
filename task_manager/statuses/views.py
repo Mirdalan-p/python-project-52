@@ -16,7 +16,23 @@ class StatusesListView(ListView):
 class StatusCreateView(CreateView):
     model = Status
     fields = ['name']
-    template_name = 'statuses/status_create.html'
-    extra_context = {'title': _('Create status')}
+    template_name = 'statuses/status.html'
+    extra_context = {'title': _('Create status'), 'action': _('Create')}
     success_url = reverse_lazy('statuses_list')
     success_message = _('Status successfully created')
+
+class StatusUpdateView(UpdateView):
+    model = Status
+    fields = ['name']
+    template_name = 'statuses/status.html'
+    extra_context = {'title': _('Update status'), 'action': _('Update')}
+    success_url = reverse_lazy('statuses_list')
+    success_message = _('Status successfully updated')
+
+class StatusDeleteView(DeleteView):
+    model = Status
+    template_name = 'statuses/status_delete.html'
+    success_message = _('Status successfully deleted')
+    success_url = reverse_lazy('statuses_list')
+    extra_context = {'title': _('Delete status')}
+    

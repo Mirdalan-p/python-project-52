@@ -25,8 +25,8 @@
             <td>{{ s.created_at }}</td>
             <td>
                 {%if request.user.is_authenticated %}
-                    [<a href="#">{% trans 'Edit' %}</a>]
-                    [<a href="#">{% trans 'Delete' %}</a>]
+                    [<a href="{% url 'status_update' s.id %}">{% trans 'Edit' %}</a>]
+                    [<a href="{% url 'status_delete' s.id %}">{% trans 'Delete' %}</a>]
                 {% endif %}
             </td>
         </tr>

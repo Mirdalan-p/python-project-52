@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-10 21:11+0300\n"
+"POT-Creation-Date: 2023-05-14 12:29+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -40,11 +40,33 @@ msgstr "Статусы"
 msgid "Create status"
 msgstr "Создать статус"
 
+#: task_manager/statuses/views.py:20
+msgid "Create"
+msgstr "Создать"
+
 #: task_manager/statuses/views.py:22
-#, fuzzy
-#| msgid "User successfully changed"
 msgid "Status successfully created"
-msgstr "Пользователь успешно изменён"
+msgstr "Статус успешно создан"
+
+#: task_manager/statuses/views.py:28
+msgid "Update status"
+msgstr "Изменить статус"
+
+#: task_manager/statuses/views.py:28 templates/users/user_update.html:13
+msgid "Update"
+msgstr "Изменить"
+
+#: task_manager/statuses/views.py:30
+msgid "Status successfully updated"
+msgstr "Сататус успешно изменён"
+
+#: task_manager/statuses/views.py:35
+msgid "Status successfully deleted"
+msgstr "Статус успешно удалён"
+
+#: task_manager/statuses/views.py:37 templates/statuses/status_delete.html:9
+msgid "Delete status"
+msgstr "Удалить статус"
 
 #: task_manager/users/models.py:11 templates/users/users_list.html:13
 msgid "Username"
@@ -123,9 +145,9 @@ msgstr "Выйти"
 msgid "Login"
 msgstr "Войти"
 
-#: templates/statuses/status_create.html:13
-msgid "Create"
-msgstr "Создать"
+#: templates/statuses/status_delete.html:10 templates/users/user_delete.html:10
+msgid "Yes, delete"
+msgstr "Да, удалить"
 
 #: templates/statuses/statuses_list.html:14 templates/users/users_list.html:15
 msgid "Created at"
@@ -139,18 +161,13 @@ msgstr "Действия"
 msgid "Edit"
 msgstr "Редактировать"
 
-#: templates/statuses/statuses_list.html:29 templates/users/user_delete.html:10
-#: templates/users/users_list.html:32
+#: templates/statuses/statuses_list.html:29 templates/users/users_list.html:32
 msgid "Delete"
 msgstr "Удалить"
 
 #: templates/users/user_delete.html:9
 msgid "Are you sure you want to delete "
 msgstr "Вы уверены что хотите удалить "
-
-#: templates/users/user_update.html:13
-msgid "Update"
-msgstr "Изменить"
 
 #: templates/users/users_list.html:14
 msgid "Fullname"
