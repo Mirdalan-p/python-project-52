@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-14 12:29+0300\n"
+"POT-Creation-Date: 2023-05-16 22:58+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,45 +28,77 @@ msgstr "Имя пользователя"
 msgid "password"
 msgstr "Пароль"
 
-#: task_manager/statuses/models.py:8 templates/statuses/statuses_list.html:13
+#: task_manager/statuses/models.py:8 task_manager/tasks/models.py:11
+#: templates/statuses/statuses_list.html:13 templates/tasks/tasks_list.html:13
 msgid "Name"
 msgstr "Имя"
 
-#: task_manager/statuses/views.py:13 templates/base.html:25
+#: task_manager/statuses/views.py:14 templates/base.html:25
 msgid "Statuses"
 msgstr "Статусы"
 
-#: task_manager/statuses/views.py:20 templates/statuses/statuses_list.html:8
+#: task_manager/statuses/views.py:21 templates/statuses/statuses_list.html:8
 msgid "Create status"
 msgstr "Создать статус"
 
-#: task_manager/statuses/views.py:20
+#: task_manager/statuses/views.py:21 templates/tasks/create_task.html:13
 msgid "Create"
 msgstr "Создать"
 
-#: task_manager/statuses/views.py:22
+#: task_manager/statuses/views.py:24
 msgid "Status successfully created"
 msgstr "Статус успешно создан"
 
-#: task_manager/statuses/views.py:28
+#: task_manager/statuses/views.py:30 task_manager/tasks/views.py:37
 msgid "Update status"
 msgstr "Изменить статус"
 
-#: task_manager/statuses/views.py:28 templates/users/user_update.html:13
+#: task_manager/statuses/views.py:30 task_manager/tasks/views.py:37
+#: templates/users/user_update.html:13
 msgid "Update"
 msgstr "Изменить"
 
-#: task_manager/statuses/views.py:30
+#: task_manager/statuses/views.py:33 task_manager/tasks/views.py:40
 msgid "Status successfully updated"
 msgstr "Сататус успешно изменён"
 
-#: task_manager/statuses/views.py:35
+#: task_manager/statuses/views.py:38 task_manager/tasks/views.py:45
 msgid "Status successfully deleted"
 msgstr "Статус успешно удалён"
 
-#: task_manager/statuses/views.py:37 templates/statuses/status_delete.html:9
+#: task_manager/statuses/views.py:41 task_manager/tasks/views.py:48
+#: templates/statuses/status_delete.html:9
 msgid "Delete status"
 msgstr "Удалить статус"
+
+#: task_manager/statuses/views.py:41 task_manager/tasks/views.py:48
+#: templates/users/user_delete.html:10
+msgid "Yes, delete"
+msgstr "Да, удалить"
+
+#: task_manager/tasks/models.py:15
+msgid "Description"
+msgstr "Описание"
+
+#: task_manager/tasks/models.py:25 templates/tasks/tasks_list.html:15
+msgid "Author"
+msgstr "Автор"
+
+#: task_manager/tasks/models.py:32 templates/tasks/tasks_list.html:16
+msgid "Executor"
+msgstr "Исполнитель"
+
+#: task_manager/tasks/views.py:15 templates/base.html:28
+msgid "Tasks"
+msgstr "Задачи"
+
+#: task_manager/tasks/views.py:22 templates/tasks/tasks_list.html:8
+msgid "Create task"
+msgstr "Создать задачу"
+
+#: task_manager/tasks/views.py:25
+msgid "Task successfully created"
+msgstr "Задача успешно создан"
 
 #: task_manager/users/models.py:11 templates/users/users_list.html:13
 msgid "Username"
@@ -88,7 +120,7 @@ msgstr "Пароль"
 msgid "Users"
 msgstr "Пользователи"
 
-#: task_manager/users/views.py:18 templates/base.html:40
+#: task_manager/users/views.py:18 templates/base.html:43
 #: templates/users/user_create.html:13
 msgid "Registration"
 msgstr "Регистрация"
@@ -117,7 +149,7 @@ msgstr "Удалить пользователя"
 msgid "Task manager"
 msgstr "Менеджер задач"
 
-#: task_manager/views.py:15 templates/base.html:37
+#: task_manager/views.py:15 templates/base.html:40
 msgid "Log in"
 msgstr "Вход"
 
@@ -126,8 +158,6 @@ msgid "You are logged in"
 msgstr "Вы залогинены"
 
 #: task_manager/views.py:30
-#, fuzzy
-#| msgid "Please, user correct username and password."
 msgid "Please, use correct username and password."
 msgstr ""
 "Пожалуйста, введите правильные имя пользователя и пароль. Оба поля могут "
@@ -137,7 +167,7 @@ msgstr ""
 msgid "U are logged out"
 msgstr "Вы разлогинены"
 
-#: templates/base.html:33
+#: templates/base.html:36
 msgid "Log out"
 msgstr "Выйти"
 
@@ -145,25 +175,29 @@ msgstr "Выйти"
 msgid "Login"
 msgstr "Войти"
 
-#: templates/statuses/status_delete.html:10 templates/users/user_delete.html:10
-msgid "Yes, delete"
-msgstr "Да, удалить"
-
-#: templates/statuses/statuses_list.html:14 templates/users/users_list.html:15
+#: templates/statuses/statuses_list.html:14 templates/tasks/tasks_list.html:17
+#: templates/users/users_list.html:15
 msgid "Created at"
 msgstr "Дата создания"
 
-#: templates/statuses/statuses_list.html:15 templates/users/users_list.html:16
+#: templates/statuses/statuses_list.html:15 templates/tasks/tasks_list.html:18
+#: templates/users/users_list.html:16
 msgid "Action"
 msgstr "Действия"
 
-#: templates/statuses/statuses_list.html:28 templates/users/users_list.html:31
+#: templates/statuses/statuses_list.html:28 templates/tasks/tasks_list.html:34
+#: templates/users/users_list.html:31
 msgid "Edit"
 msgstr "Редактировать"
 
-#: templates/statuses/statuses_list.html:29 templates/users/users_list.html:32
+#: templates/statuses/statuses_list.html:29 templates/tasks/tasks_list.html:35
+#: templates/users/users_list.html:32
 msgid "Delete"
 msgstr "Удалить"
+
+#: templates/tasks/tasks_list.html:14
+msgid "Status"
+msgstr "Статус"
 
 #: templates/users/user_delete.html:9
 msgid "Are you sure you want to delete "
