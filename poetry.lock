@@ -59,6 +59,17 @@ optional = false
 python-versions = "*"
 
 [[package]]
+name = "django-filter"
+version = "23.2"
+description = "Django-filter is a reusable Django application for allowing users to filter querysets dynamically."
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+Django = ">=3.2"
+
+[[package]]
 name = "gunicorn"
 version = "20.1.0"
 description = "WSGI HTTP Server for UNIX"
@@ -139,7 +150,7 @@ python-versions = ">=2"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "cfd0458b3a18af45c64fcbd9f9f56bb52db95af2c5d951a1fcd388aa37adc981"
+content-hash = "5bf9ceab76dbb791e16b2fc89ac9d235efcb68442cea89d4b563beaf54d789ca"
 
 [metadata.files]
 asgiref = [
@@ -174,6 +185,10 @@ django = [
 ]
 django-bootstrap = [
     {file = "django-bootstrap-0.2.4.tar.gz", hash = "sha256:9d48756d600ea1d816150e5c5fc17149afec68e8190eaed56d0858d9a092caff"},
+]
+django-filter = [
+    {file = "django-filter-23.2.tar.gz", hash = "sha256:2fe15f78108475eda525692813205fa6f9e8c1caf1ae65daa5862d403c6dbf00"},
+    {file = "django_filter-23.2-py3-none-any.whl", hash = "sha256:d12d8e0fc6d3eb26641e553e5d53b191eb8cec611427d4bdce0becb1f7c172b5"},
 ]
 gunicorn = [
     {file = "gunicorn-20.1.0-py3-none-any.whl", hash = "sha256:9dcc4547dbb1cb284accfb15ab5667a0e5d1881cc443e0677b4882a4067a807e"},

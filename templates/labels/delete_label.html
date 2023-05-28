@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load bootstrap4 %}
+{% load i18n %}
+
+{% block content %}
+<div class="container wrapper flex-grow-1">
+    <h1>{{ title }}</h1>
+    <form action="" method="post">{% csrf_token %}
+      <p> {% trans "Delete label" %}?</p>
+      <input class="btn btn-success" type="submit" value="{{ action }}">
+    </form>
+{% endblock content %}

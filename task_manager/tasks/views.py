@@ -3,29 +3,30 @@ from django.views.generic import (DetailView,
                                   ListView, 
                                   CreateView, 
                                   DeleteView, 
-                                  UpdateView
+                                  UpdateView,
                                  )
+from django_filters.views import FilterView
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.urls import reverse_lazy
 from .models import Task
 from .mixins import DeleteTaskPermission
+from .filters import TaskFilterForm
 from task_manager.users.models import User
 from task_manager.mixins import AppLoginRequiredMixin
 from django.utils.translation import gettext_lazy as _
 from django.contrib import messages
 # Create your views here.
 
-class TaskListView(AppLoginRequiredMixin, ListView):
+class TaskListView(AppLoginRequiredMixin, FilterView):
     model = Task
-    ordering = 'id'
-    context_object_name = 'tasks'
-    login_url = reverse_lazy('log_in')
+    filterset_class = TaskFilterForm
+    template_name = "tasks/tasks_list.html"
+    context_object_name = "tasks"
     extra_context = {'title': _('Tasks')}
-    template_name = 'tasks/tasks_list.html'
     
 class TaskCreateView(AppLoginRequiredMixin, CreateView):
     model = Task
-    fields = ['name', 'description', 'status', 'executor']
+    fields = ['name', 'description', 'status', 'executor', 'label']
     template_name = 'tasks/create_task.html'
     extra_context = {'title': _('Create task')}
     login_url = reverse_lazy('log_in')

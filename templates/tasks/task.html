@@ -16,11 +16,11 @@
   <div class="container">
     <div class="row p-1">
       <div class="col">{% trans 'Author' %}</div>
-      <div class="col">{{ task.author }}</div>
+      <div class="col">{{ task.author.get_full_name }}</div>
     </div>
     <div class="row p-1">
       <div class="col">{% trans 'Executor' %}</div>
-      <div class="col">{{ task.executor }}</div>
+      <div class="col">{{ task.executor.get_full_name }}</div>
     </div>
     <div class="row p-1">
       <div class="col">{% trans 'Status' %}</div>
@@ -33,9 +33,11 @@
     <div class="row p-1">
       <div class="col">
         <h6>{% trans 'Labels:' %}</h6>
-            <ul>
-                <li>labels here</li>       
-            </ul>
+          <ul>
+            {% for label in task.labels.all %}
+              <li>{{  label.name }}</li>
+            {% endfor %}
+          </ul>
       </div>
     </div>
     <div class="row p-1">

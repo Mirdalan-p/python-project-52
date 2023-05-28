@@ -6,6 +6,17 @@
 <div class="container wrapper flex-grow-1">
     <h1 class="my-4">{{ title }}</h1>
     <a href="{% url 'create_task' %}">{% trans 'Create task' %}</a>
+    <div class="card mb-3">
+        <div class="card-body bg-light">
+            <h3>{% trans 'Task search' %}</h3>
+            <form method="get" class="form-check">
+                {% bootstrap_form filter.form %}
+                <button submit="{{ btn_show }}" class="btn btn-info">
+                    {{ btn_show }}
+                </button>
+            </form>
+        </div>
+    </div>
     <table class="table table-hover table-striped table-bordered">
         <thead align="center">
         <tr>
@@ -26,8 +37,8 @@
             <td>{{ t.id }}</td>
             <td><a href="{% url 'task_view' t.id %}">{{ t.name }}</a></td>
             <td>{{ t.status }}</td>
-            <td>{{ t.author }}</td>
-            <td>{{ t.executor }}</td>
+            <td>{{ t.author.get_full_name }}</td>
+            <td>{{ t.executor.get_full_name }}</td>
             <td>{{ t.created_at }}</td>
             <td>
                 {%if request.user.is_authenticated %}
