@@ -1,12 +1,8 @@
-import os
-import json
-
 from django.contrib.auth import get_user_model
 from django.test import TestCase
 from django.urls import reverse_lazy
 
 from task_manager.tasks.models import Task
-from task_manager.settings import FIXTURE_DIRS
 
 
 class SetupTestTasks(TestCase):
@@ -61,13 +57,13 @@ class TestCreateTask(SetupTestTasks):
         self.client.force_login(user=self.user1)
         response = self.client.post(path=self.create_task_url,
                                     data={
-  "name": "new task name",
-  "description": "new task description",
-  "status": 1,
-  "tasklabels": 1,
-  "author": 1,
-  "executor": 1
-})
+                                        "name": "new task name",
+                                        "description": "new task description",
+                                        "status": 1,
+                                        "tasklabels": 1,
+                                        "author": 1,
+                                        "executor": 1
+                                        })
         self.assertRedirects(response=response, expected_url=self.tasks_url)
         self.assertEqual(first=response.status_code, second=302)
 
@@ -96,13 +92,13 @@ class TestUpdateTask(SetupTestTasks):
 
         response = self.client.post(path=self.update_task_url,
                                     data={
-  "name": "new task name",
-  "description": "new task description",
-  "status": 1,
-  "tasklabels": 1,
-  "author": 1,
-  "executor": 1
-})
+                                        "name": "new task name",
+                                        "description": "new task description",
+                                        "status": 1,
+                                        "tasklabels": 1,
+                                        "author": 1,
+                                        "executor": 1
+                                        })
         self.assertEqual(first=response.status_code, second=302)
 
         self.task = Task.objects.get(pk=1)
@@ -111,7 +107,6 @@ class TestUpdateTask(SetupTestTasks):
 
 
 class TestDeleteTask(SetupTestTasks):
-    
     fixtures = ['users.json', 'statuses.json', 'tasks.json']
 
     def test_open_delete_page_without_login(self):

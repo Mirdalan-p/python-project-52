@@ -4,6 +4,7 @@ from django.shortcuts import redirect
 from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _
 
+
 class AppLoginRequiredMixin(LoginRequiredMixin):
     login_url = reverse_lazy('login')
 

@@ -3,20 +3,22 @@ from django.utils.translation import gettext_lazy as _
 from task_manager.users.models import User
 from task_manager.statuses.models import Status
 from task_manager.labels.models import Label
+from django.utils import timezone
 # Create your models here.
+
 
 class Task(models.Model):
     name = models.CharField(
-        max_length=30, 
+        max_length=30,
         verbose_name=_('Name')
     )
     description = models.CharField(
-        max_length=150, 
+        max_length=150,
         verbose_name=_('Description')
     )
     status = models.ForeignKey(
-        Status, 
-        on_delete=models.PROTECT, 
+        Status,
+        on_delete=models.PROTECT,
     )
     author = models.ForeignKey(
         User,
@@ -31,7 +33,7 @@ class Task(models.Model):
         blank=True,
         verbose_name=_('Executor')
     )
-    created_at = models.DateTimeField(auto_now_add=True)
+    created_at = models.DateTimeField(default=timezone.now)
     label = models.ManyToManyField(
         Label,
         through='TaskLabelRelation',
@@ -40,9 +42,10 @@ class Task(models.Model):
         related_name='labels',
         verbose_name=_('Labels')
     )
+
     def __str__(self):
         return self.name
-    
+
 
 class TaskLabelRelation(models.Model):
     task = models.ForeignKey(Task, on_delete=models.CASCADE)

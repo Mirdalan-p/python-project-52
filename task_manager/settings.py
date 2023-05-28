@@ -34,7 +34,7 @@ ALLOWED_HOSTS = ['webserver',
                  'localhost',
                  '127.0.0.1',
                  '.railway.app',
-                ]
+                 ]
 
 
 # Application definition
@@ -109,19 +109,19 @@ DATABASES['default'] = dj_database_url.config()
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',  # noqa: E501
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',  # noqa: E501
         'OPTIONS': {
             'min_length': 3,
         }
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',  # noqa: E501
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',  # noqa: E501
     },
 ]
 
@@ -140,12 +140,10 @@ LANGUAGES = (
 
 USE_I18N = True
 
-USE_TZ = True
+USE_TZ = False
 
 LOCALE_URL = "locale/"
 LOCALE_PATHS = (os.path.join(BASE_DIR, 'locale'),)
-
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
