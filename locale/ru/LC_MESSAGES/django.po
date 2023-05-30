@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-30 20:26+0300\n"
+"POT-Creation-Date: 2023-05-30 21:29+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -278,6 +278,10 @@ msgstr "Метки:"
 #: templates/tasks/task_delete.html:9 templates/users/user_delete.html:9
 msgid "Are you sure you want to delete "
 msgstr "Вы уверены что хотите удалить "
+
+#: templates/tasks/tasks_list.html:14
+msgid "Show"
+msgstr "Показать"
 
 #: templates/users/users_list.html:14
 msgid "Fullname"
