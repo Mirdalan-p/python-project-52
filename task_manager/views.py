@@ -4,7 +4,7 @@ from django.contrib import messages
 from django.contrib.auth import login, authenticate, logout
 from .forms import LoginForm
 from django.utils.translation import gettext_lazy as _
-
+from django.http import HttpResponse
 
 class IndexView(TemplateView):
     template_name = 'base.html'
@@ -40,3 +40,8 @@ def log_out(request):
     logout(request)
     messages.success(request, _('U are logged out'))
     return redirect('index_page')
+
+def index(request):
+    a = None
+    a.hello() # Creating an error with an invalid line of code
+    return HttpResponse("Hello, world. You're at the pollapp index.")
