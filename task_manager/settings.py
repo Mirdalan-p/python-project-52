@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 from dotenv import load_dotenv
 import dj_database_url
+import rollbar
 import os
 
 load_dotenv()
@@ -166,3 +167,4 @@ ROLLBAR = {
     'code_version': '1.0',
     'root': BASE_DIR,
 }
+rollbar.init(**ROLLBAR)
