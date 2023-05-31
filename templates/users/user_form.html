@@ -7,9 +7,9 @@
     <h1 class="my-4">
       {{ title }}
     </h1>
-    <form method="post" novalidate>
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input class="btn btn-success" type="submit" value="{% trans 'Registration' %}">
+    <form method="post">
+      {% csrf_token %}
+      {% bootstrap_form form %}
+      {% bootstrap_button button_text button_type="submit" button_class="btn btn-primary" %}
     </form>
 {% endblock content %}
