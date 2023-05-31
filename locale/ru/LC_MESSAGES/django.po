@@ -153,16 +153,12 @@ msgid "Task successfully created"
 msgstr "Задача успешно создан"
 
 #: task_manager/tasks/views.py:44
-#, fuzzy
-#| msgid "Update status"
 msgid "Update task"
-msgstr "Изменить статус"
+msgstr "Изменить задачу"
 
 #: task_manager/tasks/views.py:47
-#, fuzzy
-#| msgid "Status successfully updated"
 msgid "Task successfully updated"
-msgstr "Сататус успешно изменён"
+msgstr "Задача успешно изменена"
 
 #: task_manager/tasks/views.py:63
 msgid "Task view"
