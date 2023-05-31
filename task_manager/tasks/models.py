@@ -12,8 +12,9 @@ class Task(models.Model):
         max_length=30,
         verbose_name=_('Name')
     )
-    description = models.CharField(
-        max_length=150,
+    description = models.TextField(
+        max_length=10000,
+        blank=True,
         verbose_name=_('Description')
     )
     status = models.ForeignKey(
@@ -29,13 +30,13 @@ class Task(models.Model):
     )
     executor = models.ForeignKey(
         User, on_delete=models.PROTECT,
-        related_name='executor_of_task',
+        related_name='executor',
         null=True,
         blank=True,
         verbose_name=_('Executor')
     )
     created_at = models.DateTimeField(default=timezone.now)
-    label = models.ManyToManyField(
+    labels = models.ManyToManyField(
         Label,
         through='TaskLabelRelation',
         through_fields=('task', 'label'),

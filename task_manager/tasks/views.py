@@ -27,7 +27,13 @@ class TaskListView(AppLoginRequiredMixin, FilterView):
 
 class TaskCreateView(SuccessMessageMixin, AppLoginRequiredMixin, CreateView):
     model = Task
-    fields = ['name', 'description', 'status', 'executor', 'label']
+    fields = [
+        'name',
+        'description',
+        'status',
+        'executor',
+        'labels'
+        ]
     template_name = 'create_form.html'
     extra_context = {
         'title': _('Create task'),
@@ -44,7 +50,13 @@ class TaskCreateView(SuccessMessageMixin, AppLoginRequiredMixin, CreateView):
 
 class TaskUpdateView(SuccessMessageMixin, AppLoginRequiredMixin, UpdateView):
     model = Task
-    fields = ['name', 'description', 'status', 'executor']
+    fields = [
+        'name',
+        'description',
+        'status',
+        'executor',
+        'labels'
+        ]
     template_name = 'create_form.html'
     extra_context = {
         'title': _('Update task'),
