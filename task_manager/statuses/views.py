@@ -16,8 +16,10 @@ class StatusesListView(ListView):
 class StatusCreateView(LoginRequiredMixin, CreateView):
     model = Status
     fields = ['name']
-    template_name = 'statuses/status.html'
-    extra_context = {'title': _('Create status'), 'action': _('Create')}
+    template_name = 'create_form.html'
+    extra_context = {
+        'title': _('Create status'),
+        'button_text': _('Create')}
     login_url = reverse_lazy('log_in')
     success_url = reverse_lazy('statuses_list')
     success_message = _('Status successfully created')
@@ -26,8 +28,10 @@ class StatusCreateView(LoginRequiredMixin, CreateView):
 class StatusUpdateView(LoginRequiredMixin, UpdateView):
     model = Status
     fields = ['name']
-    template_name = 'statuses/status.html'
-    extra_context = {'title': _('Update status'), 'action': _('Update')}
+    template_name = 'create_form.html'
+    extra_context = {
+        'title': _('Update status'),
+        'button_text': _('Update')}
     login_url = reverse_lazy('log_in')
     success_url = reverse_lazy('statuses_list')
     success_message = _('Status successfully updated')

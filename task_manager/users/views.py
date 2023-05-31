@@ -16,7 +16,7 @@ class UsersListView(ListView):
 
 class UserCreateView(SuccessMessageMixin, CreateView):
     form_class = UserForm
-    template_name = 'users/user_form.html'
+    template_name = 'create_form.html'
     extra_context = {
         'title': _('Registration'),
         'button_text': _('Register'),
@@ -28,7 +28,7 @@ class UserCreateView(SuccessMessageMixin, CreateView):
 class UserUpdateView(SuccessMessageMixin, UpdateView):
     model = User
     form_class = UserForm
-    template_name = 'users/user_form.html'
+    template_name = 'create_form.html'
     success_message = _('User successfully changed')
     success_url = reverse_lazy('users_list')
     login_url = reverse_lazy('log_in')
