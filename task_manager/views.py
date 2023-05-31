@@ -6,6 +6,7 @@ from .forms import LoginForm
 from django.utils.translation import gettext_lazy as _
 from django.http import HttpResponse
 
+
 class IndexView(TemplateView):
     template_name = 'base.html'
     extra_context = {'title': _('Task manager')}

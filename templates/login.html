@@ -4,12 +4,12 @@
 
 {% block content %}
 <div class="container wrapper flex-grow-1">
-	<form method="POST" novalidate>
-		{% csrf_token %}
-		<h2>{{ title }}</h2>
-		{{form.as_p}}
-		<input type="submit" value="{% trans 'Login' %}" />
-	</form>
+	<h1 class="my-4">{{ title }}</h1>
+    <form method="post">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        <input class="btn btn-success" type="submit" value="{% trans 'Log in' %}">
+    </form>
 </div>
 
 {% endblock content%}
