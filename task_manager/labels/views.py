@@ -6,6 +6,7 @@ from .models import Label
 from django.utils.translation import gettext_lazy as _
 from django.db.models import ProtectedError
 from django.contrib import messages
+from django.contrib.messages.views import SuccessMessageMixin
 # Create your views here.
 
 
@@ -17,7 +18,7 @@ class LabelsListView(ListView):
     template_name = 'labels/labels_list.html'
 
 
-class LabelsCreateView(LoginRequiredMixin, CreateView):
+class LabelsCreateView(SuccessMessageMixin, LoginRequiredMixin, CreateView):
     model = Label
     fields = ['name']
     template_name = 'labels/create_label.html'
@@ -27,7 +28,7 @@ class LabelsCreateView(LoginRequiredMixin, CreateView):
     success_message = _('Label successfully created')
 
 
-class LabelsUpdateView(LoginRequiredMixin, UpdateView):
+class LabelsUpdateView(SuccessMessageMixin, LoginRequiredMixin, UpdateView):
     model = Label
     fields = ['name']
     template_name = 'labels/update_label.html'
@@ -37,7 +38,7 @@ class LabelsUpdateView(LoginRequiredMixin, UpdateView):
     success_message = _('Label successfully updated')
 
 
-class LabelsDeleteView(LoginRequiredMixin, DeleteView):
+class LabelsDeleteView(SuccessMessageMixin, LoginRequiredMixin, DeleteView):
     model = Label
     template_name = 'labels/delete_label.html'
     success_message = _('Label successfully deleted')

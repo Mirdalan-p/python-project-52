@@ -103,11 +103,11 @@ msgstr "Изменить статус"
 
 #: task_manager/statuses/views.py:33
 msgid "Status successfully updated"
-msgstr "Сататус успешно изменён"
+msgstr "Статус успешно изменен"
 
 #: task_manager/statuses/views.py:39 task_manager/tasks/views.py:53
 msgid "Status successfully deleted"
-msgstr "Статус успешно удалён"
+msgstr "Статус успешно удален"
 
 #: task_manager/statuses/views.py:42 task_manager/tasks/views.py:56
 #: templates/statuses/status_delete.html:9

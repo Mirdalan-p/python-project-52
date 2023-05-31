@@ -10,6 +10,7 @@ from .mixins import DeleteTaskPermission
 from .filters import TaskFilterForm
 from task_manager.users.models import User
 from task_manager.mixins import AppLoginRequiredMixin
+from django.contrib.messages.views import SuccessMessageMixin
 from django.utils.translation import gettext_lazy as _
 # Create your views here.
 
@@ -24,7 +25,7 @@ class TaskListView(AppLoginRequiredMixin, FilterView):
         'title': _('Tasks'),}
 
 
-class TaskCreateView(AppLoginRequiredMixin, CreateView):
+class TaskCreateView(SuccessMessageMixin, AppLoginRequiredMixin, CreateView):
     model = Task
     fields = ['name', 'description', 'status', 'executor', 'label']
     template_name = 'create_form.html'
@@ -41,7 +42,7 @@ class TaskCreateView(AppLoginRequiredMixin, CreateView):
         return super().form_valid(form)
 
 
-class TaskUpdateView(AppLoginRequiredMixin, UpdateView):
+class TaskUpdateView(SuccessMessageMixin, AppLoginRequiredMixin, UpdateView):
     model = Task
     fields = ['name', 'description', 'status', 'executor']
     template_name = 'create_form.html'
@@ -54,7 +55,7 @@ class TaskUpdateView(AppLoginRequiredMixin, UpdateView):
     success_message = _('Task successfully updated')
 
 
-class TaskDeleteView(DeleteTaskPermission, AppLoginRequiredMixin, DeleteView):
+class TaskDeleteView(SuccessMessageMixin, DeleteTaskPermission, AppLoginRequiredMixin, DeleteView):
     model = Task
     template_name = 'tasks/task_delete.html'
     success_message = _('Status successfully deleted')
