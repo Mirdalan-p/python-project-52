@@ -8,6 +8,9 @@ migrations:
 	python3 manage.py makemigrations
 	python3 manage.py migrate
 
+test:
+	poetry run python3 manage.py test
+
 test-coverage:
 	poetry run coverage run manage.py test
 	poetry run coverage report -m --include=task_manager/* --omit=task_manager/settings.py
