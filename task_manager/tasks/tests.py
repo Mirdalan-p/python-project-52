@@ -63,7 +63,8 @@ class TestCreateTask(SetupTestTasks):
                                         "tasklabels": 1,
                                         "author": 1,
                                         "executor": 1
-                                        })
+                                    }
+                                    )
         self.assertRedirects(response=response, expected_url=self.tasks_url)
         self.assertEqual(first=response.status_code, second=302)
 
@@ -98,7 +99,8 @@ class TestUpdateTask(SetupTestTasks):
                                         "tasklabels": 1,
                                         "author": 1,
                                         "executor": 1
-                                        })
+                                    }
+                                    )
         self.assertEqual(first=response.status_code, second=302)
 
         self.task = Task.objects.get(pk=1)

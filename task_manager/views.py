@@ -33,7 +33,7 @@ def sign_in(request):
         messages.error(
             request,
             _('Please, use correct username and password.')
-            )
+        )
         return render(request, 'login.html', {'form': form})
 
 
@@ -42,7 +42,8 @@ def log_out(request):
     messages.success(request, _('U are logged out'))
     return redirect('index_page')
 
+
 def index(request):
     a = None
-    a.hello() # Creating an error with an invalid line of code
+    a.hello()  # Creating an error with an invalid line of code
     return HttpResponse("Hello, world. You're at the pollapp index.")

@@ -6,7 +6,7 @@ from .models import User
 First_user = {
     'username': 'firstuser',
     'password': 'Один',
-    }
+}
 
 Second_user = {
     'username': 'secondtuser',
@@ -14,7 +14,7 @@ Second_user = {
     'last_name': 'Второй',
     'password1': 'Два',
     'password2': 'Два'
-    }
+}
 
 
 class UsersTest(TestCase):
@@ -30,24 +30,24 @@ class UsersTest(TestCase):
         initial_users_count = User.objects.count()
         self.client.post(
             self.url_register, data=Second_user
-            )
+        )
         self.assertEqual(
             User.objects.count(), initial_users_count + 1
-            )
+        )
 
     def test_user_login(self):
         self.client.post(self.url_login, data=First_user)
         auth_id = self.client.session['_auth_user_id']
         self.assertEqual(
             User.objects.get(pk=auth_id).username, 'firstuser'
-            )
+        )
 
     def test_user_update(self):
         self.client.post(self.url_login, data=First_user)
         self.client.post(self.url_user_update, data=Second_user)
         self.assertEqual(
             User.objects.get(pk=1).username, 'secondtuser'
-            )
+        )
 
     def test_user_delete(self):
         self.client.post(self.url_login, data=First_user)

@@ -6,7 +6,7 @@ from django.urls import reverse_lazy
 First_user = {
     'username': 'firstuser',
     'password': 'Один'
-    }
+}
 
 
 class SimpleTestCase(TestCase):

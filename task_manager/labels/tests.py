@@ -6,7 +6,7 @@ from django.urls import reverse_lazy
 First_user = {
     'username': 'firstuser',
     'password': 'Один'
-    }
+}
 
 
 class SimpleTestCase(TestCase):
@@ -14,9 +14,11 @@ class SimpleTestCase(TestCase):
     url_create_label = reverse_lazy(
         'create_label')
     url_update_label = reverse_lazy(
-        'label_update', kwargs={"pk": 1})
+        'label_update', kwargs={"pk": 1}
+    )
     url_delete_label = reverse_lazy(
-        'label_delete', kwargs={"pk": 1})
+        'label_delete', kwargs={"pk": 1}
+    )
 
     def setUp(self):
         self.user = User.objects.create_user(**First_user)

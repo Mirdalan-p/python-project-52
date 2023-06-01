@@ -22,7 +22,8 @@ class TaskListView(AppLoginRequiredMixin, FilterView):
     context_object_name = "tasks"
     login_url = reverse_lazy('log_in')
     extra_context = {
-        'title': _('Tasks'),}
+        'title': _('Tasks'),
+    }
 
 
 class TaskCreateView(SuccessMessageMixin, AppLoginRequiredMixin, CreateView):
@@ -33,12 +34,12 @@ class TaskCreateView(SuccessMessageMixin, AppLoginRequiredMixin, CreateView):
         'status',
         'executor',
         'labels'
-        ]
+    ]
     template_name = 'create_form.html'
     extra_context = {
         'title': _('Create task'),
         'button_text': _('Create'),
-        }
+    }
     login_url = reverse_lazy('log_in')
     success_url = reverse_lazy('tasks_list')
     success_message = _('Task successfully created')
@@ -56,12 +57,12 @@ class TaskUpdateView(SuccessMessageMixin, AppLoginRequiredMixin, UpdateView):
         'status',
         'executor',
         'labels'
-        ]
+    ]
     template_name = 'create_form.html'
     extra_context = {
         'title': _('Update task'),
         'button_text': _('Update'),
-        }
+    }
     login_url = reverse_lazy('log_in')
     success_url = reverse_lazy('tasks_list')
     success_message = _('Task successfully updated')

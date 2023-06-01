@@ -20,7 +20,7 @@ class UserCreateView(SuccessMessageMixin, CreateView):
     extra_context = {
         'title': _('Registration'),
         'button_text': _('Register'),
-        }
+    }
     success_url = reverse_lazy('log_in')
     success_message = _('User successfully registered')
 
@@ -35,7 +35,7 @@ class UserUpdateView(SuccessMessageMixin, UpdateView):
     extra_context = {
         'title': _('Update user'),
         'button_text': _('Update'),
-        }
+    }
 
 
 class UserDeleteView(SuccessMessageMixin, DeleteView):
