@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-01 22:20+0300\n"
+"POT-Creation-Date: 2023-06-01 22:32+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -106,12 +106,11 @@ msgstr "Изменить статус"
 msgid "Status successfully updated"
 msgstr "Статус успешно изменен"
 
-#: task_manager/statuses/views.py:44 task_manager/tasks/views.py:73
+#: task_manager/statuses/views.py:44
 msgid "Status successfully deleted"
 msgstr "Статус успешно удален"
 
-#: task_manager/statuses/views.py:47 task_manager/tasks/views.py:76
-#: templates/statuses/status_delete.html:9
+#: task_manager/statuses/views.py:47 templates/statuses/status_delete.html:9
 msgid "Delete status"
 msgstr "Удалить статус"
 
@@ -156,7 +155,7 @@ msgstr "Создать задачу"
 
 #: task_manager/tasks/views.py:44
 msgid "Task successfully created"
-msgstr "Задача успешно создан"
+msgstr "Задача успешно создана"
 
 #: task_manager/tasks/views.py:62
 msgid "Update task"
@@ -165,6 +164,14 @@ msgstr "Изменить задачу"
 #: task_manager/tasks/views.py:67
 msgid "Task successfully updated"
 msgstr "Задача успешно изменена"
+
+#: task_manager/tasks/views.py:73
+msgid "Task successfully deleted"
+msgstr "Задача успешно удалена"
+
+#: task_manager/tasks/views.py:76
+msgid "Delete Task"
+msgstr "Удалить задачу"
 
 #: task_manager/tasks/views.py:83
 msgid "Task view"

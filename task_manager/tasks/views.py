@@ -70,10 +70,10 @@ class TaskUpdateView(SuccessMessageMixin, AppLoginRequiredMixin, UpdateView):
 class TaskDeleteView(SuccessMessageMixin, DeleteTaskPermission, AppLoginRequiredMixin, DeleteView):
     model = Task
     template_name = 'tasks/task_delete.html'
-    success_message = _('Status successfully deleted')
+    success_message = _('Task successfully deleted')
     login_url = reverse_lazy('log_in')
     success_url = reverse_lazy('tasks_list')
-    extra_context = {'title': _('Delete status')}
+    extra_context = {'title': _('Delete Task')}
 
 
 class TaskView(AppLoginRequiredMixin, DetailView):
