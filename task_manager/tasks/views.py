@@ -68,7 +68,12 @@ class TaskUpdateView(SuccessMessageMixin, AppLoginRequiredMixin, UpdateView):
     success_message = _('Task successfully updated')
 
 
-class TaskDeleteView(SuccessMessageMixin, DeleteTaskPermission, AppLoginRequiredMixin, DeleteView):
+class TaskDeleteView(
+    SuccessMessageMixin,
+    DeleteTaskPermission,
+    AppLoginRequiredMixin,
+    DeleteView
+):
     model = Task
     template_name = 'tasks/task_delete.html'
     success_message = _('Task successfully deleted')
