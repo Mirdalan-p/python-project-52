@@ -10,11 +10,12 @@ from django.contrib.messages.views import SuccessMessageMixin
 # Create your views here.
 
 
-class LabelsListView(ListView):
+class LabelsListView(LoginRequiredMixin, ListView):
     model = Label
     ordering = 'id'
     context_object_name = 'labels'
     extra_context = {'title': _('Labels')}
+    login_url = reverse_lazy('log_in')
     template_name = 'labels/labels_list.html'
 
 

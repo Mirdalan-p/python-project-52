@@ -6,7 +6,7 @@ from task_manager.tasks.models import Task
 
 
 class SetupTestTasks(TestCase):
-    fixtures = ['users.json', 'statuses.json', 'tasks.json']
+    fixtures = ['users.json', 'statuses.json', 'tasks.json', 'labels.json']
 
     def setUp(self):
         self.tasks_url = reverse_lazy('tasks_list')
@@ -21,8 +21,27 @@ class SetupTestTasks(TestCase):
         self.task2 = Task.objects.get(pk=2)
 
 
+class TestNoLoginStatusesViews(SetupTestTasks):
+
+    def test_open_tasks_page_with_no_login(self):
+        response = self.client.get(self.tasks_url)
+        self.assertEqual(response.status_code, 302)
+
+    def test_open_create_task_page_with_no_login(self):
+        response = self.client.get(self.create_task_url)
+        self.assertEqual(response.status_code, 302)
+
+    def test_open_update_task_page_with_no_login(self):
+        response = self.client.get(self.update_task_url)
+        self.assertEqual(response.status_code, 302)
+
+    def test_open_delete_task_page_with_no_login(self):
+        response = self.client.get(self.delete_task1_url)
+        self.assertEqual(response.status_code, 302)
+
+
 class TestTaskList(SetupTestTasks):
-    fixtures = ['users.json', 'statuses.json', 'tasks.json']
+    fixtures = ['users.json', 'statuses.json', 'tasks.json', 'labels.json']
 
     def test_open_all_tasks_page(self):
         self.client.force_login(user=self.user1)
@@ -42,7 +61,7 @@ class TestTaskList(SetupTestTasks):
 
 
 class TestCreateTask(SetupTestTasks):
-    fixtures = ['users.json', 'statuses.json', 'tasks.json']
+    fixtures = ['users.json', 'statuses.json', 'tasks.json', 'labels.json']
 
     def test_open_create_status_page_without_login(self):
         response = self.client.get(self.create_task_url)
@@ -60,7 +79,7 @@ class TestCreateTask(SetupTestTasks):
                                         "name": "new task name",
                                         "description": "new task description",
                                         "status": 1,
-                                        "tasklabels": 1,
+                                        "labels": [],
                                         "author": 1,
                                         "executor": 1
                                     }
@@ -74,7 +93,7 @@ class TestCreateTask(SetupTestTasks):
 
 
 class TestUpdateTask(SetupTestTasks):
-    fixtures = ['users.json', 'statuses.json', 'tasks.json']
+    fixtures = ['users.json', 'statuses.json', 'tasks.json', 'labels.json']
 
     def test_open_update_tasks_page_without_login(self):
         response = self.client.get(self.update_task_url)
@@ -96,7 +115,7 @@ class TestUpdateTask(SetupTestTasks):
                                         "name": "new task name",
                                         "description": "new task description",
                                         "status": 1,
-                                        "tasklabels": 1,
+                                        "labels": [],
                                         "author": 1,
                                         "executor": 1
                                     }

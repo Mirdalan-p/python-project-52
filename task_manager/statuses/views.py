@@ -6,11 +6,12 @@ from .models import Status
 from django.utils.translation import gettext_lazy as _
 
 
-class StatusesListView(ListView):
+class StatusesListView(LoginRequiredMixin, ListView):
     model = Status
     ordering = 'id'
     context_object_name = 'statuses'
     extra_context = {'title': _('Statuses')}
+    login_url = reverse_lazy('log_in')
     template_name = 'statuses/statuses_list.html'
 
 
